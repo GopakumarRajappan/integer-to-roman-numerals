@@ -7,6 +7,7 @@ package ntt.integer.roman.conversion;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class IntegerToRomanConversion {
 
@@ -25,7 +26,10 @@ public class IntegerToRomanConversion {
 		integerRomanMap.put(500, "D");
 		integerRomanMap.put(1000, "M");
 		
-		int userIntegerInput = 49;
+		System.out.print("Enter Integer to be converted to Roman numeral: ");
+		Scanner scan = new Scanner(System.in);		
+		int userIntegerInput = scan.nextInt();
+
 		String romanNumeral = "";
 		
 
@@ -123,6 +127,6 @@ public class IntegerToRomanConversion {
 				userIntegerInput = remainder;			
 			}
 		}
-		System.out.println(romanNumeral);
+		System.out.println("Roman numeral equivalent of the given input is: " + romanNumeral);
 	}
 }
