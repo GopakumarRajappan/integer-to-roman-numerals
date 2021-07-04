@@ -24,7 +24,7 @@ public class IntegerToRomanConversionHelper {
 		/**
 	    * while loop is used to exit the loop based on exit condition.
 	    * Valid user input is verified against the standard "key" mentioned in
-	    * the integerRomanMap. Conditions are also executed inside while loop for code optimization
+	    * the integerRomanMap. Conditions are also executed inside while loop for code optimization.
 		**/		
 		int quotient, remainder;
 		String romanNumeral = "";
