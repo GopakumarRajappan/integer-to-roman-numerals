@@ -13,18 +13,32 @@ public class IntegerToRomanConversion {
 
 	public static void main(String[] args) {
 		
+		int [] integerValues = {1, 5, 10, 50, 100, 500, 1000};
+		String [] romanNumerals = {"I", "V", "X", "L", "C", "D", "M"};
+		
 		/**
 		 * HashMap used to store the key-value pairs since speed of operation 
 		 * is the constraint than order.
 		 **/
 		Map<Integer,String> integerRomanMap = new HashMap<Integer, String>();
-		integerRomanMap.put(1, "I");
-		integerRomanMap.put(5, "V");
-		integerRomanMap.put(10, "X");
-		integerRomanMap.put(50, "L");
-		integerRomanMap.put(100, "C");
-		integerRomanMap.put(500, "D");
-		integerRomanMap.put(1000, "M");
+		
+		/**
+		 * 	integerRomanMap is populated based on integer array and roman numeral array.
+		 * This design change is done to make the code more generic and scalable by eliminating
+		 * hard-coding of key-value pairs.
+		 */		
+		try {
+			if (integerValues.length == romanNumerals.length) {
+				for (int iterator = 0; iterator < integerValues.length; iterator++) {
+					integerRomanMap.put(integerValues[iterator], romanNumerals[iterator]);
+				}
+				System.out.println("integerRomanMap: " + integerRomanMap);
+			}else {
+				throw new Exception();
+			}
+		}catch (Exception except) {
+			System.out.println("please make sure that integerValues array and romanNumerals array mapping is correct");
+		}
 		
 		/**
 		 * Accepting user input and closing scanner after use.

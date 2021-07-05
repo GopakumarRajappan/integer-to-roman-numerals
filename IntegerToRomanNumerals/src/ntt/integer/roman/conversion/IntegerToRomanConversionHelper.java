@@ -22,9 +22,11 @@ public class IntegerToRomanConversionHelper {
 	protected static String convertIntegerToRoman (int userIntegerInput, Map<Integer,String> integerRomanMap) {
 
 		/**
-	    * while loop is used to exit the loop based on exit condition.
-	    * Valid user input is verified against the standard "key" mentioned in
-	    * the integerRomanMap. Conditions are also executed inside while loop for code optimization
+		 * This method converts integer to roman numerals by successively dividing the user input
+		 * starting with upper limit ( 1000 ) followed by other keys in the integerRomanMap. In addition to this,
+		 * if the reminder falls with in 90% of the key values, calculation logic is incorporated to find the roman numeral.
+		 * user input is updated with the reminder value in each iteration.
+		 * 
 		**/		
 		int quotient, remainder;
 		String romanNumeral = "";
